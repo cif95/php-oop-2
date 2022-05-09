@@ -2,7 +2,7 @@
 include_once __DIR__ . "/Product.php";
 
 /**
- * A class that models a Cat
+ * A class that models a Toy product
  */
 class Toy extends Product {
 	protected $name;
@@ -10,7 +10,7 @@ class Toy extends Product {
 	protected $animalAge;
 	protected $animalSpecies;
 
-	/** Builds a new Cat istance
+	/** Builds a new Toy istance
 	 * @param $name  The name of toy product
 	 * @param $purpose The purpose of toy product( educational, training, teething, etc. )
  	 * @param $animalAge  The animal's age suggested for toy product
