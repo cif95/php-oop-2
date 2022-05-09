@@ -10,7 +10,7 @@ include_once __DIR__ . '/classes/Guest.php';
 include_once __DIR__ . '/classes/Customer.php';
 include_once __DIR__ . '/classes/CreditCard.php';
 
-$userCard = new CreditCard(5167984324512036, 2026, 'MasterCard', '555', 500);
+$userCard = new CreditCard( 51679843245120, 2026, 'MasterCard', '555', 500);
 
 $userAddress = array(
 	'street' => 'Via Roma, 15',
@@ -21,8 +21,16 @@ $userAddress = array(
 
 $user = new Customer( '_aurora9', 'aurora', 'rossi', '20', 22, 'aurora_rossi@gmail.com', '3914445620', $userAddress, $userCard );
 
+$collar = new Accessory( 'cuoio', true, 'collare per cani in cuoio', 'Il collare in cuoio è un classico il cui pregio sta nella sua semplicità e nella sua durata. In diverse lunghezze, larghezze e colori, il collare per cane in cuoio è sempre molto elegante.', 'collari', 25.00, 2, 'cani');
+
+
 var_dump($user);
 
+
+
+var_dump($user->purchase($collar));
+
+var_dump($user);
 ?>
 
 

@@ -12,7 +12,7 @@ class Accessory extends Product {
 	 * @param $materials  Materials of which the Accessory product is made
 	 * @param $is_customizable Whether the Accessory product can be customized or not
 	 */
-	function __construct( $materials, $is_customizable, $name, $category, $price, $animalAge, $animalSpecies ){
+	function __construct( $materials, $is_customizable, $name, $description, $category, $price, $animalAge, $animalSpecies ){
 			parent::__construct( $name, $description, $category, $price, $animalAge, $animalSpecies );
 			$this->materials = $materials;
 			$this->is_customizable = $is_customizable;

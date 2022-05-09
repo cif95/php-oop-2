@@ -3,11 +3,11 @@
  * A class for any credit card
  */
 class CreditCard{
-	protected $number;
-	protected $expiringDate;
-	protected $network;
-	protected $cvv;
-	protected $balance;
+	public $number;
+	public $expiringDate;
+	public $network;
+	public $cvv;
+	public $balance;
 
 	/**
 	 * Builds a new CreditCard instance.
@@ -42,6 +42,10 @@ class CreditCard{
 
 	protected function getCvv() {
 		return $this->cvv;
+	}
+
+	public function getBalance() {
+		return $this->balance;
 	}
 
 // ***** Setter methods  ***** //

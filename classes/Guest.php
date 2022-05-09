@@ -75,6 +75,35 @@ class Guest{
 		}
 	}
 
+// ***** custom methods *****
+
+
+/**
+ * Function that makes a purchase of a given product
+ *
+ * @param $product to be purchased
+ */
+public function purchase($product) {
+
+	// checks if customer's credit card balance is enough to make the purchase
+	if ( $this->creditCard->getBalance() < $product->price ) {
+		return 'Transazione rifiutata: fondi insufficienti';
+	}
+
+	// checks if the customer's credit card is not expired
+	if ( $this->creditCard->expiringDate < date("Y") ) {
+		return 'Transazione rifiutata: La carta di credito è scaduta.';
+	}
+
+	// checks if the customer has a discount
+	if ( $this->discount > 0) {
+		$product->setPrice( $product->price * $this->discount / 100);
+	}
+
+	$this->creditCard->setBalance( ($this->creditCard->balance) - ($product->price) );
+	return 'Transazione effettuata con successo. Hai beneficiato di uno sconto del ' . $this->discount . '%'; 
+}
+
 
 }
 

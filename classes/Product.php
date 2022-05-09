@@ -3,12 +3,12 @@
  * A class for any product.
  */
 class Product{
-	protected $name;
-	protected $description;
-	protected $category;
-	protected $price;
-	protected $animalAge;
-	protected $animalSpecies;
+	public $name;
+	public $description;
+	public $category;
+	public $price;
+	public $animalAge;
+	public $animalSpecies;
 	/**
 	 * Builds a new Product instance.
 	 *
@@ -68,7 +68,7 @@ class Product{
 		$this->category = $category;
 	}
 
-	protected function setPrice($price) {
+	public function setPrice($price) {
 		$this->price = $price;
 	}
 
