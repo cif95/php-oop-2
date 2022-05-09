@@ -6,28 +6,25 @@ include_once __DIR__ . "/Product.php";
  */
 class Food extends Product {
 	protected $name;
-	protected $animalAge;
-	protected $animalSpecies;
+	protected $price;
+	protected $expiringDate;
 
 	/** Builds a new Food istance
 	 * @param $name  The name of food product
- 	 * @param $animalAge  The animal's age suggested for food product
-	 * @param $animalSpecies The animal's species for which the food product is suggestes
+	 * @param $price  The price of food product
+	 * @param $expiringDate  The expiring date of food product
 	 */
-	function __construct($name, $animalAge, $animalSpecies){
-			parent::__construct( $category, $price );
+	function __construct($name, $price, $expiringDate){
+			parent::__construct( $category, $animalAge, $animalSpecies );
 			$this->name = $name;
-			$this->animalAge = $animalAge;
-			$this->animalSpecies = $animalSpecies;
+			$this->price = $price;
+			$this->expiringDate = $expiringDate;
 	}
 
 	public function getName(){
 			return $this->name;
 	}
 
-	public function getPurpose(){
-		return $this->purpose;
-	}
 
 }
 

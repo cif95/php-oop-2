@@ -4,16 +4,20 @@
  */
 class Product{
     protected $category;
-    protected $price;
+		protected $animalAge;
+		protected $animalSpecies;
     /**
      * Builds a new Product instance.
      *
-     * @param string $category  Category of product
-     * @param string $price  Price of product
+     * @param $category  Category of product
+     * @param $price  Price of product
+		 * @param $animalAge  The animal's age suggested for food product
+		 * @param $animalSpecies The animal's species for which the food product is suggestes
      */
-    function __construct( $category, $price){
+    function __construct( $category, $animalAge, $animalSpecies){
         $this->category = $category;
-        $this->price = $price;
+				$this->animalAge = $animalAge;
+				$this->animalSpecies = $animalSpecies;
     }
 
 		protected function setCategory($category) {
