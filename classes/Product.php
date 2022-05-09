@@ -4,6 +4,7 @@
  */
 class Product{
     protected $category;
+		protected $price;
 		protected $animalAge;
 		protected $animalSpecies;
     /**
@@ -14,8 +15,9 @@ class Product{
 		 * @param $animalAge  The animal's age suggested for food product
 		 * @param $animalSpecies The animal's species for which the food product is suggestes
      */
-    function __construct( $category, $animalAge, $animalSpecies){
+    function __construct( $category, $price, $animalAge, $animalSpecies){
         $this->category = $category;
+				$this->price = $price;
 				$this->animalAge = $animalAge;
 				$this->animalSpecies = $animalSpecies;
     }

@@ -7,11 +7,11 @@ include_once __DIR__ . "/Product.php";
 class Accessory extends Product {
 	protected $name;
 
-	/** Builds a new Food istance
+	/** Builds a new Accessory istance
 	 * @param $name  The name of Accessory product
 	 */
-	function __construct( $category, $animalAge, $animalSpecies ){
-			parent::__construct( $category, $price );
+	function __construct( $name, $category, $price, $animalAge, $animalSpecies ){
+			parent::__construct( $category, $price, $animalAge, $animalSpecies );
 			$this->name = $name;
 	}
 

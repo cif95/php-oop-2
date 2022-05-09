@@ -6,7 +6,6 @@ include_once __DIR__ . "/Product.php";
  */
 class Food extends Product {
 	protected $name;
-	protected $price;
 	protected $expiringDate;
 
 	/** Builds a new Food istance
@@ -14,10 +13,9 @@ class Food extends Product {
 	 * @param $price  The price of food product
 	 * @param $expiringDate  The expiring date of food product
 	 */
-	function __construct($name, $price, $expiringDate){
-			parent::__construct( $category, $animalAge, $animalSpecies );
+	function __construct($name, $expiringDate, $category, $price, $animalAge, $animalSpecies){
+			parent::__construct( $category, $price, $animalAge, $animalSpecies );
 			$this->name = $name;
-			$this->price = $price;
 			$this->expiringDate = $expiringDate;
 	}
 
