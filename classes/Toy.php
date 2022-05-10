@@ -10,7 +10,7 @@ class Toy extends Product {
 	/** Builds a new Toy istance
 	 * @param $purpose The purpose of toy product( fun, educational, training, teething, etc. )
 	 */
-	function __construct( $purpose, $name, $description, $category, $price, $animalAge, $animalSpecies){
+	public function __construct( $purpose, $name, $description, $category, $price, $animalAge, $animalSpecies){
 			parent::__construct( $name, $description, $category, $price, $animalAge, $animalSpecies );
 			$this->purpose = $purpose;
 	}

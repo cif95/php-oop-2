@@ -3,12 +3,12 @@
  * A class for any product.
  */
 class Product{
-	public $name;
-	public $description;
-	public $category;
-	public $price;
-	public $animalAge;
-	public $animalSpecies;
+	protected $name;
+	protected $description;
+	protected $category;
+	protected $price;
+	protected $animalAge;
+	protected $animalSpecies;
 	/**
 	 * Builds a new Product instance.
 	 *
@@ -19,7 +19,7 @@ class Product{
 	 * @param $animalAge  The animal's age for which the product is structured
 	 * @param $animalSpecies The animal's species for which the product is structured
 	 */
-	function __construct( $name, $description, $category, $price, $animalAge, $animalSpecies){
+	public function __construct( $name, $description, $category, $price, $animalAge, $animalSpecies){
 		$this->name = $name;	
 		$this->description = $description;
 		$this->category = $category;
@@ -31,7 +31,7 @@ class Product{
 // ***** Getter methods  ***** //
 
 	public function getName() {
-		return $this->name;
+		return ucfirst($this->name);
 	}
 
 	public function getDescription() {
@@ -56,15 +56,15 @@ class Product{
 
 // ***** Setter methods  ***** //
 
-	protected function setName($name) {
+	public function setName($name) {
 		$this->name = $name;
 	}
 
-	protected function setDescription($description) {
+	public function setDescription($description) {
 		$this->description = $description;
 	}
 
-	protected function setCategory($category) {
+	public function setCategory($category) {
 		$this->category = $category;
 	}
 
@@ -72,11 +72,11 @@ class Product{
 		$this->price = $price;
 	}
 
-	protected function setAnimalAge($animalAge) {
+	public function setAnimalAge($animalAge) {
 		$this->animalAge = $animalAge;
 	}
 
-	protected function setAnimalSpecies($animalSpecies) {
+	public function setAnimalSpecies($animalSpecies) {
 		$this->animalSpecies = $animalSpecies;
 	}
 

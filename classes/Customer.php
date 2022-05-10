@@ -24,7 +24,7 @@ class Customer extends Guest{
 	 * @param $address Customer's home address
 	 * @param $creditCard Customer's credit card
 	 */
-	function __construct($username, $firstName, $lastName, $discount, $age, $email, $phone, $address, $creditCard) {
+	public function __construct($username, $firstName, $lastName, $discount, $age, $email, $phone, $address, $creditCard) {
 		parent::__construct( $age, $email, $phone, $address, $creditCard );
 		$this->username = $username;
 		$this->firstName = $firstName;
@@ -35,15 +35,15 @@ class Customer extends Guest{
 
 	// ***** Getter methods  ***** //
 
-	protected function getUsername() {
+	public function getUsername() {
 		return $this->username;
 	}
 
-	protected function getFirstName() {
+	public function getFirstName() {
 		return $this->firstName;
 	}
 
-	protected function getLastName() {
+	public function getLastName() {
 		return $this->lastName;
 	}
 
@@ -53,11 +53,11 @@ class Customer extends Guest{
 
 // ***** Setter methods  ***** //
 
-	protected function setUsername($username) {
+	public function setUsername($username) {
 		$this->username = $username;
 	}
 
-	protected function setDiscount($discount) {
+	public function setDiscount($discount) {
 		$this->discount = $discount;
 	}
 

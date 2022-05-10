@@ -1,4 +1,5 @@
 <?php
+include_once __DIR__ . "/CreditCard.php";
 /**
  * A class for any guest
  */
@@ -19,7 +20,7 @@ class Guest{
 	 * @param $address guest's shipping address
 	 * @param $creditCard guest's credit card
 	 */
-	function __construct( $age, $email, $phone, $address, $creditCard ){
+	public function __construct( $age, $email, $phone, $address, $creditCard ){
 		$this->age = $age;	
 		$this->email = $email;
 		$this->phone = $phone;
@@ -29,45 +30,41 @@ class Guest{
 
 // ***** Getter methods  ***** //
 
-	protected function getAge() {
+	public function getAge() {
 		return $this->age;
 	}
 
-	protected function getEmail() {
+	public function getEmail() {
 		return $this->email;
 	}
 
-	protected function getPhone() {
+	public function getPhone() {
 		return $this->phone;
 	}
 
-	protected function getAddress() {
+	public function getAddress() {
 		return $this->address;
-	}
-
-	protected function getCreditCard() {
-		return '*********' . substr( $this->creditCard, -4);
 	}
 
 // ***** Setter methods  ***** //
 
-	protected function setAge($age) {
+	public function setAge($age) {
 		$this->age = $age;
 	}
 
-	protected function setEmail($email) {
+	public function setEmail($email) {
 		$this->email = $email;
 	}
 
-	protected function setPhone($phone) {
+	public function setPhone($phone) {
 		$this->phone = $phone;
 	}
 
-	protected function setAddress($address) {
+	public function setAddress($address) {
 		$this->address = $address;
 	}
 
-	protected function setCreditCard($creditCard) {
+	public function setCreditCard($creditCard) {
 		if ( $creditCard instanceof CreditCard ) {
 			$this->creditCard = $creditCard;
 		} else {
@@ -86,21 +83,21 @@ class Guest{
 public function purchase($product) {
 
 	// checks if customer's credit card balance is enough to make the purchase
-	if ( $this->creditCard->getBalance() < $product->price ) {
+	if ( $this->creditCard->getBalance() < $product->getPrice() ) {
 		return 'Transazione rifiutata: fondi insufficienti';
 	}
 
 	// checks if the customer's credit card is not expired
-	if ( $this->creditCard->expiringDate < date("Y") ) {
+	if ( $this->creditCard->getExpiringDate() < date("Y") ) {
 		return 'Transazione rifiutata: La carta di credito è scaduta.';
 	}
 
 	// checks if the customer has a discount
 	if ( $this->discount > 0) {
-		$product->setPrice( $product->price * $this->discount / 100);
+		$product->setPrice( $product->getPrice() * $this->discount / 100);
 	}
 
-	$this->creditCard->setBalance( ($this->creditCard->balance) - ($product->price) );
+	$this->creditCard->setBalance( ($this->creditCard->getBalance()) - ($product->getPrice()) );
 	return 'Transazione effettuata con successo. Hai beneficiato di uno sconto del ' . $this->discount . '%'; 
 }
 

@@ -12,7 +12,7 @@ class Food extends Product {
 	 * @param $ingredients  List of ingredients of food product
 	 * @param $expiringDate  The expiring date of food product
 	 */
-	function __construct($ingredients, $expiringDate, $name, $description, $category, $price, $animalAge, $animalSpecies){
+	public function __construct($ingredients, $expiringDate, $name, $description, $category, $price, $animalAge, $animalSpecies){
 			parent::__construct( $name, $description, $category, $price, $animalAge, $animalSpecies );
 			$this->ingredients = $ingredients;
 			$this->expiringDate = $expiringDate;

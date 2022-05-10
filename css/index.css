@@ -1,0 +1,51 @@
+/***** Reset *****/
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	color: rgb(94, 94, 94);
+	font-family: sans-serif;
+	background-image: url('../img/washi-pattern.webp');
+}
+
+.flex-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 auto;
+	gap: 2rem;
+	flex-wrap: wrap;
+	max-width: 1000px;
+	min-height: calc(100vh - 92px );
+}
+
+div.card {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	border-radius: 10px;
+	background-color: #ffc485;
+	height: 250px;
+	padding: 1rem;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	flex-basis: calc( (100% / 3) - 2rem );
+}
+
+div.card h3{
+	margin-bottom: 1rem;
+}
+
+div.card p.price {
+	padding: 1rem 0;
+	font-size: 0.85rem;
+	color: rgb(197, 47, 47);
+}
+
+section#products {
+	padding: 2rem;
+}
